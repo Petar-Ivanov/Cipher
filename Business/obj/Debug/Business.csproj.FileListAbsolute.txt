@@ -1,0 +1,30 @@
+D:\VS Projects\Cipher\Business\bin\Debug\Business.dll.config
+D:\VS Projects\Cipher\Business\bin\Debug\Business.dll
+D:\VS Projects\Cipher\Business\bin\Debug\Business.pdb
+D:\VS Projects\Cipher\Business\bin\Debug\Data.dll
+D:\VS Projects\Cipher\Business\bin\Debug\EntityFramework.dll
+D:\VS Projects\Cipher\Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\VS Projects\Cipher\Business\bin\Debug\Data.pdb
+D:\VS Projects\Cipher\Business\bin\Debug\Data.dll.config
+D:\VS Projects\Cipher\Business\bin\Debug\EntityFramework.xml
+D:\VS Projects\Cipher\Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\VS Projects\Cipher\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+D:\VS Projects\Cipher\Business\obj\Debug\Business.csproj.CopyComplete
+D:\VS Projects\Cipher\Business\obj\Debug\Business.dll
+D:\VS Projects\Cipher\Business\obj\Debug\Business.pdb
+D:\VS Projects\Cipher\Business\obj\Debug\Business.csproj.AssemblyReference.cache
+C:\Cipher\Business\bin\Debug\Business.dll.config
+C:\Cipher\Business\bin\Debug\Business.dll
+C:\Cipher\Business\bin\Debug\Business.pdb
+C:\Cipher\Business\bin\Debug\Data.dll
+C:\Cipher\Business\bin\Debug\EntityFramework.dll
+C:\Cipher\Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Cipher\Business\bin\Debug\Data.pdb
+C:\Cipher\Business\bin\Debug\Data.dll.config
+C:\Cipher\Business\bin\Debug\EntityFramework.xml
+C:\Cipher\Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Cipher\Business\obj\Debug\Business.csproj.AssemblyReference.cache
+C:\Cipher\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Cipher\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Cipher\Business\obj\Debug\Business.dll
+C:\Cipher\Business\obj\Debug\Business.pdb

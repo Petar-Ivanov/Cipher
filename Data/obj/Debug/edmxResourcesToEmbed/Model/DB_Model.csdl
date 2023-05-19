@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CipherDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account_Additions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Account_ID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_on_card" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Account_Credentials">
+    <Key>
+      <PropertyRef Name="Account_ID" />
+    </Key>
+    <Property Name="Account_ID" Type="Int32" Nullable="false" />
+    <Property Name="Username_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Username_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="First_Name_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="First_Name_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="E_mail_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="E_mail_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="First_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="E_mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="C2FA" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Additions_Credentials">
+    <Key>
+      <PropertyRef Name="Addition_ID" />
+    </Key>
+    <Property Name="Addition_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Data_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Data_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Entry">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Account_ID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Additional_Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Entries_Credentials">
+    <Key>
+      <PropertyRef Name="Entry_ID" />
+    </Key>
+    <Property Name="Entry_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Additional_Info_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Additional_Info_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Field">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Entry_ID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Fields_Credentials">
+    <Key>
+      <PropertyRef Name="Field_ID" />
+    </Key>
+    <Property Name="Field_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Data_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Data_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="CipherDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Account_Additions" EntityType="Self.Account_Additions" />
+    <EntitySet Name="Account_Credentials" EntityType="Self.Account_Credentials" />
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Additions_Credentials" EntityType="Self.Additions_Credentials" />
+    <EntitySet Name="Entries" EntityType="Self.Entry" />
+    <EntitySet Name="Entries_Credentials" EntityType="Self.Entries_Credentials" />
+    <EntitySet Name="Fields" EntityType="Self.Field" />
+    <EntitySet Name="Fields_Credentials" EntityType="Self.Fields_Credentials" />
+  </EntityContainer>
+</Schema>

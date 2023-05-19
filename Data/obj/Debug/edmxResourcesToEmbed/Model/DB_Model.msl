@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CipherDBModelStoreContainer" CdmEntityContainer="CipherDBEntities">
+    <EntitySetMapping Name="Account_Additions">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Account_Additions)">
+        <MappingFragment StoreEntitySet="Account_Additions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="is_on_card" ColumnName="is_on_card" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Account_Credentials">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Account_Credentials)">
+        <MappingFragment StoreEntitySet="Account_Credentials">
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Username_Key" ColumnName="Username_Key" />
+          <ScalarProperty Name="Username_Vector" ColumnName="Username_Vector" />
+          <ScalarProperty Name="First_Name_Key" ColumnName="First_Name_Key" />
+          <ScalarProperty Name="First_Name_Vector" ColumnName="First_Name_Vector" />
+          <ScalarProperty Name="Last_Name_Key" ColumnName="Last_Name_Key" />
+          <ScalarProperty Name="Last_Name_Vector" ColumnName="Last_Name_Vector" />
+          <ScalarProperty Name="E_mail_Key" ColumnName="E_mail_Key" />
+          <ScalarProperty Name="E_mail_Vector" ColumnName="E_mail_Vector" />
+          <ScalarProperty Name="Password_Key" ColumnName="Password_Key" />
+          <ScalarProperty Name="Password_Vector" ColumnName="Password_Vector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Account)">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="E_mail" ColumnName="E_mail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="C2FA" ColumnName="C2FA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Additions_Credentials">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Additions_Credentials)">
+        <MappingFragment StoreEntitySet="Additions_Credentials">
+          <ScalarProperty Name="Addition_ID" ColumnName="Addition_ID" />
+          <ScalarProperty Name="Name_Key" ColumnName="Name_Key" />
+          <ScalarProperty Name="Name_Vector" ColumnName="Name_Vector" />
+          <ScalarProperty Name="Data_Key" ColumnName="Data_Key" />
+          <ScalarProperty Name="Data_Vector" ColumnName="Data_Vector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entries">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Entry)">
+        <MappingFragment StoreEntitySet="Entries">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Additional_Info" ColumnName="Additional_Info" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entries_Credentials">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Entries_Credentials)">
+        <MappingFragment StoreEntitySet="Entries_Credentials">
+          <ScalarProperty Name="Entry_ID" ColumnName="Entry_ID" />
+          <ScalarProperty Name="Name_Key" ColumnName="Name_Key" />
+          <ScalarProperty Name="Name_Vector" ColumnName="Name_Vector" />
+          <ScalarProperty Name="Additional_Info_Key" ColumnName="Additional_Info_Key" />
+          <ScalarProperty Name="Additional_Info_Vector" ColumnName="Additional_Info_Vector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fields">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Field)">
+        <MappingFragment StoreEntitySet="Fields">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Entry_ID" ColumnName="Entry_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fields_Credentials">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Fields_Credentials)">
+        <MappingFragment StoreEntitySet="Fields_Credentials">
+          <ScalarProperty Name="Field_ID" ColumnName="Field_ID" />
+          <ScalarProperty Name="Name_Key" ColumnName="Name_Key" />
+          <ScalarProperty Name="Name_Vector" ColumnName="Name_Vector" />
+          <ScalarProperty Name="Data_Key" ColumnName="Data_Key" />
+          <ScalarProperty Name="Data_Vector" ColumnName="Data_Vector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

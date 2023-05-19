@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CipherDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CipherDBModelStoreContainer">
+    <EntitySet Name="Account_Additions" EntityType="CipherDBModel.Store.Account_Additions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Account_Credentials" EntityType="CipherDBModel.Store.Account_Credentials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Accounts" EntityType="CipherDBModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Additions_Credentials" EntityType="CipherDBModel.Store.Additions_Credentials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Entries" EntityType="CipherDBModel.Store.Entries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Entries_Credentials" EntityType="CipherDBModel.Store.Entries_Credentials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Fields" EntityType="CipherDBModel.Store.Fields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Fields_Credentials" EntityType="CipherDBModel.Store.Fields_Credentials" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Account_Additions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_ID" Type="int" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="is_on_card" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Account_Credentials">
+    <Key>
+      <PropertyRef Name="Account_ID" />
+    </Key>
+    <Property Name="Account_ID" Type="int" Nullable="false" />
+    <Property Name="Username_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Username_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="First_Name_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="First_Name_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Last_Name_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Last_Name_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="E_mail_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="E_mail_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Password_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Password_Vector" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="First_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Last_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="E_mail" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="C2FA" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Additions_Credentials">
+    <Key>
+      <PropertyRef Name="Addition_ID" />
+    </Key>
+    <Property Name="Addition_ID" Type="int" Nullable="false" />
+    <Property Name="Name_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data_Vector" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Entries">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_ID" Type="int" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Additional_Info" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Entries_Credentials">
+    <Key>
+      <PropertyRef Name="Entry_ID" />
+    </Key>
+    <Property Name="Entry_ID" Type="int" Nullable="false" />
+    <Property Name="Name_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Additional_Info_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Additional_Info_Vector" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Fields">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Entry_ID" Type="int" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Fields_Credentials">
+    <Key>
+      <PropertyRef Name="Field_ID" />
+    </Key>
+    <Property Name="Field_ID" Type="int" Nullable="false" />
+    <Property Name="Name_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data_Vector" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CipherDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account_Additions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account_ID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="is_on_card" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Account_Credentials">
+          <Key>
+            <PropertyRef Name="Account_ID" />
+          </Key>
+          <Property Name="Account_ID" Type="Int32" Nullable="false" />
+          <Property Name="Username_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Username_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="First_Name_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="First_Name_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="E_mail_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="E_mail_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="First_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="E_mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C2FA" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Additions_Credentials">
+          <Key>
+            <PropertyRef Name="Addition_ID" />
+          </Key>
+          <Property Name="Addition_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Entry">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account_ID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Additional_Info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Entries_Credentials">
+          <Key>
+            <PropertyRef Name="Entry_ID" />
+          </Key>
+          <Property Name="Entry_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Additional_Info_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Additional_Info_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Field">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Entry_ID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Fields_Credentials">
+          <Key>
+            <PropertyRef Name="Field_ID" />
+          </Key>
+          <Property Name="Field_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data_Vector" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="CipherDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Account_Additions" EntityType="Self.Account_Additions" />
+          <EntitySet Name="Account_Credentials" EntityType="Self.Account_Credentials" />
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Additions_Credentials" EntityType="Self.Additions_Credentials" />
+          <EntitySet Name="Entries" EntityType="Self.Entry" />
+          <EntitySet Name="Entries_Credentials" EntityType="Self.Entries_Credentials" />
+          <EntitySet Name="Fields" EntityType="Self.Field" />
+          <EntitySet Name="Fields_Credentials" EntityType="Self.Fields_Credentials" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CipherDBModelStoreContainer" CdmEntityContainer="CipherDBEntities">
+    <EntitySetMapping Name="Account_Additions">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Account_Additions)">
+        <MappingFragment StoreEntitySet="Account_Additions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="is_on_card" ColumnName="is_on_card" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Account_Credentials">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Account_Credentials)">
+        <MappingFragment StoreEntitySet="Account_Credentials">
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Username_Key" ColumnName="Username_Key" />
+          <ScalarProperty Name="Username_Vector" ColumnName="Username_Vector" />
+          <ScalarProperty Name="First_Name_Key" ColumnName="First_Name_Key" />
+          <ScalarProperty Name="First_Name_Vector" ColumnName="First_Name_Vector" />
+          <ScalarProperty Name="Last_Name_Key" ColumnName="Last_Name_Key" />
+          <ScalarProperty Name="Last_Name_Vector" ColumnName="Last_Name_Vector" />
+          <ScalarProperty Name="E_mail_Key" ColumnName="E_mail_Key" />
+          <ScalarProperty Name="E_mail_Vector" ColumnName="E_mail_Vector" />
+          <ScalarProperty Name="Password_Key" ColumnName="Password_Key" />
+          <ScalarProperty Name="Password_Vector" ColumnName="Password_Vector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Account)">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="E_mail" ColumnName="E_mail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="C2FA" ColumnName="C2FA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Additions_Credentials">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Additions_Credentials)">
+        <MappingFragment StoreEntitySet="Additions_Credentials">
+          <ScalarProperty Name="Addition_ID" ColumnName="Addition_ID" />
+          <ScalarProperty Name="Name_Key" ColumnName="Name_Key" />
+          <ScalarProperty Name="Name_Vector" ColumnName="Name_Vector" />
+          <ScalarProperty Name="Data_Key" ColumnName="Data_Key" />
+          <ScalarProperty Name="Data_Vector" ColumnName="Data_Vector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entries">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Entry)">
+        <MappingFragment StoreEntitySet="Entries">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Additional_Info" ColumnName="Additional_Info" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entries_Credentials">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Entries_Credentials)">
+        <MappingFragment StoreEntitySet="Entries_Credentials">
+          <ScalarProperty Name="Entry_ID" ColumnName="Entry_ID" />
+          <ScalarProperty Name="Name_Key" ColumnName="Name_Key" />
+          <ScalarProperty Name="Name_Vector" ColumnName="Name_Vector" />
+          <ScalarProperty Name="Additional_Info_Key" ColumnName="Additional_Info_Key" />
+          <ScalarProperty Name="Additional_Info_Vector" ColumnName="Additional_Info_Vector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fields">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Field)">
+        <MappingFragment StoreEntitySet="Fields">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Entry_ID" ColumnName="Entry_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fields_Credentials">
+      <EntityTypeMapping TypeName="IsTypeOf(CipherDBModel.Fields_Credentials)">
+        <MappingFragment StoreEntitySet="Fields_Credentials">
+          <ScalarProperty Name="Field_ID" ColumnName="Field_ID" />
+          <ScalarProperty Name="Name_Key" ColumnName="Name_Key" />
+          <ScalarProperty Name="Name_Vector" ColumnName="Name_Vector" />
+          <ScalarProperty Name="Data_Key" ColumnName="Data_Key" />
+          <ScalarProperty Name="Data_Vector" ColumnName="Data_Vector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

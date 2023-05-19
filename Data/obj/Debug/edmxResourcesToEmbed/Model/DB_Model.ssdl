@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CipherDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CipherDBModelStoreContainer">
+    <EntitySet Name="Account_Additions" EntityType="CipherDBModel.Store.Account_Additions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Account_Credentials" EntityType="CipherDBModel.Store.Account_Credentials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Accounts" EntityType="CipherDBModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Additions_Credentials" EntityType="CipherDBModel.Store.Additions_Credentials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Entries" EntityType="CipherDBModel.Store.Entries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Entries_Credentials" EntityType="CipherDBModel.Store.Entries_Credentials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Fields" EntityType="CipherDBModel.Store.Fields" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Fields_Credentials" EntityType="CipherDBModel.Store.Fields_Credentials" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Account_Additions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_ID" Type="int" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="is_on_card" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Account_Credentials">
+    <Key>
+      <PropertyRef Name="Account_ID" />
+    </Key>
+    <Property Name="Account_ID" Type="int" Nullable="false" />
+    <Property Name="Username_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Username_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="First_Name_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="First_Name_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Last_Name_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Last_Name_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="E_mail_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="E_mail_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Password_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Password_Vector" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="First_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Last_Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="E_mail" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="C2FA" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Additions_Credentials">
+    <Key>
+      <PropertyRef Name="Addition_ID" />
+    </Key>
+    <Property Name="Addition_ID" Type="int" Nullable="false" />
+    <Property Name="Name_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data_Vector" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Entries">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account_ID" Type="int" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Additional_Info" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Entries_Credentials">
+    <Key>
+      <PropertyRef Name="Entry_ID" />
+    </Key>
+    <Property Name="Entry_ID" Type="int" Nullable="false" />
+    <Property Name="Name_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Additional_Info_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Additional_Info_Vector" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Fields">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Entry_ID" Type="int" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Fields_Credentials">
+    <Key>
+      <PropertyRef Name="Field_ID" />
+    </Key>
+    <Property Name="Field_ID" Type="int" Nullable="false" />
+    <Property Name="Name_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Name_Vector" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data_Key" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Data_Vector" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+</Schema>
